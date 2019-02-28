@@ -32,15 +32,7 @@ namespace InternalMoneyTransfer.DAL.Repository.TransactionRepository
                 .Include(c => c.Debtor).ThenInclude(c => c.User)
                 .FirstOrDefault(entity => entity.Id == id);
         }
-
-        public IEnumerable<Transaction> GetAllTransactionByAccountId(int accountId)
-        {
-            return _appContext.Transactions
-                .Include(c => c.Creditor).ThenInclude(c => c.User)
-                .Include(c => c.Debtor).ThenInclude(c => c.User)
-                .Where(t => t.Creditor.Id == accountId || t.Debtor.Id == accountId).ToList();
-        }
-
+        
         public IEnumerable<Transaction> GetAll(int accountId)
         {
             return _appContext.Transactions
@@ -73,12 +65,6 @@ namespace InternalMoneyTransfer.DAL.Repository.TransactionRepository
                     }
                 }
             }
-        }
-
-        public void Update(Transaction entity)
-        {
-            _appContext.Transactions.Update(entity).State = EntityState.Modified;
-            _appContext.SaveChanges();
         }
 
         #endregion

@@ -11,11 +11,7 @@ namespace InternalMoneyTransfer.DAL.Repository.AccountRepository
 
         IEnumerable<T> GetAllWithoutExcludedId(int id);
 
-        IEnumerable<T> GetAll();
-
         void Insert(T entity);
-
-        void Update(T entity);
 
         #endregion
     }

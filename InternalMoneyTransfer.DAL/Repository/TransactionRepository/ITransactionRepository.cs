@@ -9,13 +9,9 @@ namespace InternalMoneyTransfer.DAL.Repository.TransactionRepository
 
         T Get(int id);
 
-        IEnumerable<T> GetAllTransactionByAccountId(int id);
-
         IEnumerable<T> GetAll(int accountId);
 
         void Insert(T entity);
-
-        void Update(T entity);
 
         #endregion
     }

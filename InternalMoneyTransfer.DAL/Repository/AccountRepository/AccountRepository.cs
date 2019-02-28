@@ -36,22 +36,9 @@ namespace InternalMoneyTransfer.DAL.Repository.AccountRepository
             return _appContext.UsersAccounts.Include(c => c.User).Where(t => t.Id != excludeId).ToList();
         }
 
-        public IEnumerable<UserAccount> GetAll()
-        {
-            return _appContext.UsersAccounts
-                .Include(x => x.User)
-                .ToList();
-        }
-
         public void Insert(UserAccount entity)
         {
             _appContext.UsersAccounts.Add(entity);
-            _appContext.SaveChanges();
-        }
-
-        public void Update(UserAccount entity)
-        {
-            _appContext.UsersAccounts.Update(entity).State = EntityState.Modified;
             _appContext.SaveChanges();
         }
 

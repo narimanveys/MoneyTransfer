@@ -6,8 +6,6 @@ namespace InternalMoneyTransfer.Services.UserAccount
     {
         #region Methods
 
-        void CreateAccount(Core.DataModel.UserAccount account);
-
         Core.DataModel.UserAccount GetAccountById(int id);
 
         IEnumerable<Core.DataModel.UserAccount> GetAllAccountsWithoutExcludedId(int excludedId);

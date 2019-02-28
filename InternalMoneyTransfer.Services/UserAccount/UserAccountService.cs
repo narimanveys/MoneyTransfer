@@ -23,11 +23,6 @@ namespace InternalMoneyTransfer.Services.UserAccount
 
         #region Methods
 
-        public void CreateAccount(Core.DataModel.UserAccount account)
-        {
-            _accountRepository.Insert(account);
-        }
-
         public Core.DataModel.UserAccount GetAccountById(int id)
         {
             return _accountRepository.Get(id);
