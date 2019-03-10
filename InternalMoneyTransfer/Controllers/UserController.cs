@@ -85,7 +85,7 @@ namespace InternalMoneyTransfer.Controllers
             try
             {
                 _userService.CreateUser(user, userDto.Password);
-                return Ok();
+                return Ok(userDto);
             }
             catch (Exception ex)
             {
